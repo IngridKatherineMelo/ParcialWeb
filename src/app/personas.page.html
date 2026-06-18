@@ -1,0 +1,61 @@
+<section class="page">
+  <div class="header">
+    <h1>Gestión de Clientes</h1>
+  </div>
+
+  <section class="form-card">
+    <h2>{{ editId() ? 'Editar cliente' : 'Nuevo cliente' }}</h2>
+    <form (ngSubmit)="save()">
+      <label>
+        Nombre
+        <input name="nombre" [(ngModel)]="nombre" required />
+      </label>
+      <label>
+        Correo
+        <input name="correo" [(ngModel)]="correo" />
+      </label>
+      <label>
+        Teléfono
+        <input name="telefono" [(ngModel)]="telefono" />
+      </label>
+      <div class="actions">
+        <button type="submit">{{ editId() ? 'Guardar' : 'Crear' }}</button>
+        <button type="button" class="secondary" (click)="resetForm()">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <section *ngIf="error()" class="error-box">
+    {{ error() }}
+  </section>
+
+  <section *ngIf="loading()" class="loading-box">
+    Cargando clientes...
+  </section>
+
+  <section *ngIf="!loading()" class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes()">
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.correo || '—' }}</td>
+          <td>{{ cliente.telefono || '—' }}</td>
+          <td>
+            <button type="button" (click)="edit(cliente)">Editar</button>
+            <button type="button" class="danger" (click)="remove(cliente.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>

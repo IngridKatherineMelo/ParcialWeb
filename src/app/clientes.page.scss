@@ -1,0 +1,85 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-card,
+.table-card {
+  border: 1px solid #d7dade;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.04);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d7dade;
+  border-radius: 0.75rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  background: #3f51b5;
+  color: white;
+  font-weight: 700;
+}
+
+button.secondary {
+  background: #e0e0e0;
+  color: #222;
+}
+
+button.danger {
+  background: #d32f2f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th,
+tbody td {
+  padding: 0.9rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e6e8eb;
+}
+
+.error-box,
+.loading-box {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #fff4f4;
+  color: #8b0000;
+}
